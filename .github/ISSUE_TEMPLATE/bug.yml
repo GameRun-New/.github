@@ -1,0 +1,70 @@
+name: Bug
+description: Something is broken or behaves wrongly.
+type: Bug
+body:
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Production
+        - Stage
+        - Dev
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: true
+      options:
+        - Web
+        - Mobile browser
+        - iOS app
+        - Android app
+        - Backend / API
+        - Internal dashboard
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: The screen name or the URL.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, starting from a known screen.
+      placeholder: |
+        1. Sign in as ...
+        2. Open ...
+        3. Tap ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: upload
+    id: attachments
+    attributes:
+      label: Attachments
+      description: A screenshot, a screen recording or a log that shows the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Optional. Links, files or notes. The account used, a report id, the app build or a Sentry link.
